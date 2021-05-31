@@ -1,7 +1,7 @@
 local Performance = {}
 local OPTIONHOUSE, L = ...
 local frame, scriptProfiling
-local TOTAL_ROWS = 15
+local TOTAL_ROWS = 24
 
 local gsub, pairs, sort, strfind, strlower, tinsert
     = gsub, pairs, sort, strfind, strlower, tinsert
