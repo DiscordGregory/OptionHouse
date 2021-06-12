@@ -190,7 +190,7 @@ end
 -- Main container frame
 function OptionHouse:CreateUI()
 	if self.frame then return end
-
+	collectgarbage("collect")
 	local frame = CreateFrame("Frame", "OptionHouseFrame", UIParent, "ButtonFrameTemplate")
 	frame:EnableMouse(true) -- @Phanx: don't allow clickthrough
 	frame:SetMovable(true)
