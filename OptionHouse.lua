@@ -189,6 +189,7 @@ end
 
 -- Main container frame
 function OptionHouse:CreateUI()
+	if InCombatLockdown() then return end --DiscordGregory
 	if self.frame then return end
 	collectgarbage("collect")
 	local frame = CreateFrame("Frame", "OptionHouseFrame", UIParent, "ButtonFrameTemplate")
