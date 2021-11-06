@@ -189,9 +189,9 @@ end
 
 -- Main container frame
 function OptionHouse:CreateUI()
-	if InCombatLockdown() then return end --DiscordGregory
+	if InCombatLockdown() then return end --DiscordGregory, error if you try to open UI in combat
 	if self.frame then return end
-	collectgarbage("collect")
+	collectgarbage("collect") --DiscordGregory, safe to remove if you want
 	local frame = CreateFrame("Frame", "OptionHouseFrame", UIParent, "ButtonFrameTemplate")
 	frame:EnableMouse(true) -- @Phanx: don't allow clickthrough
 	frame:SetMovable(true)
