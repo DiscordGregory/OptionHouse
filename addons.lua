@@ -535,7 +535,7 @@ local function createRows()
 		frame.rows[id] = row
 
 		-- Enable checkbox
-		row.enabled = CreateFrame("CheckButton", nil, row, "OptionsCheckButtonTemplate")
+		row.enabled = CreateFrame("CheckButton", nil, row, "InterfaceOptionsCheckButtonTemplate ")
 		row.enabled:SetWidth(22)
 		row.enabled:SetHeight(22)
 		row.enabled:SetHitRectInsets(0, -215, 0, 0)

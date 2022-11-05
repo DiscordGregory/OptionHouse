@@ -55,10 +55,10 @@ function OptionHouse:CreateTab(text, id)
 
 	local tab = self.frame.tabs[id]
 	if not tab then
-		tab = CreateFrame("Button", "$parentTab"..id, self.frame, "CharacterFrameTabButtonTemplate")
+		tab = CreateFrame("Button", "$parentTab"..id, self.frame, "PanelTabButtonTemplate")
 		tab:GetFontString():SetPoint("CENTER", 0, 2)
-		tab:GetHighlightTexture():SetPoint("TOPLEFT", -1, 4)
-		tab:GetHighlightTexture():SetPoint("BOTTOMRIGHT", 0, 0)
+		-- tab:GetHighlightTexture():SetPoint("TOPLEFT", -1, 4)
+		-- tab:GetHighlightTexture():SetPoint("BOTTOMRIGHT", 0, 0)
 		tab:UnregisterEvent("DISPLAY_SIZE_CHANGED")
 		tab:SetScript("OnEvent", nil)
 
@@ -227,6 +227,7 @@ function OptionHouse:CreateUI()
 	frame:SetAttribute("UIPanelLayout-whileDead", true)
 	tinsert(UISpecialFrames, "OptionHouseFrame")
 
+	frame.TitleText = frame:CreateFontString("OptionHouseTitle", "OVERLAY", "GameTooltipText")
 	frame.TitleText:SetText(L["Option House"])
 	frame.portrait = frame:CreateTexture()
 	SetPortraitToTexture(frame.portrait, "Interface\\ICONS\\Achievement_Faction_Craftsman")
