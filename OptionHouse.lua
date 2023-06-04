@@ -106,7 +106,7 @@ function OptionHouse:UpdateScroll(scroll, totalRows)
 		max = 0
 	end
 
-	scroll.bar:SetMinMaxValues(0, max)
+	-- scroll.bar:SetMinMaxValues(0, max)
 
 	if( totalRows > scroll.displayNum ) then
 		scroll:Show()
@@ -142,7 +142,7 @@ function OptionHouse:CreateScrollFrame(frame, displayNum, onScroll)
 	frame:EnableMouseWheel(true)
 	frame:SetScript("OnMouseWheel", onParentMouseWheel)
 
-	local scroll = CreateFrame("ScrollFrame", "$parentScrollFrame", frame, "UIPanelScrollFrameTemplate2")
+	local scroll = CreateFrame("ScrollFrame", "$parentScrollFrame", frame, "UIPanelScrollFrameTemplate")--"ButtonFrameTemplate")--"UIPanelScrollFrameTemplate2")
 	scroll:SetPoint("TOPLEFT", 10, -65)
 	scroll:SetPoint("BOTTOMRIGHT", -31, 30)
 	
@@ -160,13 +160,13 @@ function OptionHouse:CreateScrollFrame(frame, displayNum, onScroll)
 	scroll.up = scroll.ScrollBar.ScrollUpButton
 	scroll.down = scroll.ScrollBar.ScrollDownButton
 
-	scroll.barUpTexture = _G[scroll:GetName().."Top"]
-	scroll.barUpTexture:SetPoint("TOPLEFT", scroll.up, -6, 5)
-	scroll.barUpTexture:SetWidth(29)
+	-- scroll.barUpTexture = _G[scroll:GetName().."Top"]
+	-- scroll.barUpTexture:SetPoint("TOPLEFT", scroll.up, -6, 5)
+	-- scroll.barUpTexture:SetWidth(29)
 
-	scroll.barDownTexture = _G[scroll:GetName().."Bottom"]
-	scroll.barDownTexture:SetPoint("BOTTOMLEFT", scroll.down, -6, -2)
-	scroll.barDownTexture:SetWidth(29)
+	-- scroll.barDownTexture = _G[scroll:GetName().."Bottom"]
+	-- scroll.barDownTexture:SetPoint("BOTTOMLEFT", scroll.down, -6, -2)
+	-- scroll.barDownTexture:SetWidth(29)
 
 	frame.scroll = scroll
 	return scroll
